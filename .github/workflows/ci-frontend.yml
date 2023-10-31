@@ -33,7 +33,6 @@ jobs:
           
 
   test:
-    needs: [compile]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
