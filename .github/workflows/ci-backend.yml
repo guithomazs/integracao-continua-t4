@@ -26,6 +26,7 @@ jobs:
   compile:
     needs: build
     runs-on: ubuntu-latest
+    uses: build
     steps:
       - name: Maven Compile
         working-directory: sgcmapi/
