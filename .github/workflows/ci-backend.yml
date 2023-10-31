@@ -24,11 +24,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
   compile:
+    runs-on: ubuntu-latest
     steps:
       - name: Maven Compile
         working-directory: sgcmapi/
         run: mvn compile 
   test:
+    runs-on: ubuntu-latest
     steps:
       - name: Maven Test
         working-directory: sgcmapi/
