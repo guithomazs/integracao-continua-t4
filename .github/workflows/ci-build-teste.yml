@@ -1,15 +1,6 @@
 name: CI building
 
 on:
-  push:
-    branches:
-      - 'main'
-    paths:
-      - 'sgcmapi/**'
-  workflow_dispatch:
-  pull_request:
-    paths:
-      - 'sgcmapi/**'
   workflow_call:
 
 jobs:
