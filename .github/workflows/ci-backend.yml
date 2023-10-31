@@ -27,6 +27,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      uses: build
       - name: Maven Compile
         working-directory: sgcmapi/
         run: mvn compile 
@@ -34,6 +35,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+        uses: build
       - name: Maven Test
         working-directory: sgcmapi/
         run: mvn test
