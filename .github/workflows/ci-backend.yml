@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: ./.github/workflows/ci-build-teste.yml@main
+      - uses: build 
       - name: Maven Compile
         working-directory: sgcmapi/
         run: mvn compile 
@@ -35,7 +35,7 @@ jobs:
     needs: [build, compile]
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/ci-build-teste.yml@main
+      - uses: build
       - name: Maven Test
         working-directory: sgcmapi/
         run: mvn test
