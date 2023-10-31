@@ -23,21 +23,29 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - uses: actions/upload-artifact@master
+        with:
+          name: my-artifact
+          path: path/to/artifact
   compile:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: ReBuild
-        uses: ./.github/workflows/ci-backend.yml@build
+      - uses: actions/download-artifact@master
+        with:
+          name: my-artifact
+          path: path/to/artifact
       - name: Maven Compile
         working-directory: sgcmapi/
         run: mvn compile 
   test:
-    needs: build
+    needs: [build, compile]
     runs-on: ubuntu-latest
     steps:
-      - name: ReBuild
-        uses: ./.github/workflows/ci-backend.yml@build
+      - uses: actions/download-artifact@master
+        with:
+          name: my-artifact
+          path: path/to/artifact
       - name: Maven Test
         working-directory: sgcmapi/
         run: mvn test
