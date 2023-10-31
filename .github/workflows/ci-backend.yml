@@ -26,7 +26,7 @@ jobs:
   compile:
     needs: build
     runs-on: ubuntu-latest
-    uses: build
+    uses: ./.github/workflows/build
     steps:
       - name: Maven Compile
         working-directory: sgcmapi/
@@ -34,6 +34,7 @@ jobs:
   test:
     needs: build
     runs-on: ubuntu-latest
+    uses: ./.github/workflows/build
     steps:
       - name: Maven Test
         working-directory: sgcmapi/
