@@ -26,16 +26,18 @@ jobs:
   compile:
     needs: build
     runs-on: ubuntu-latest
-    uses: ./.github/workflows/ci-backend.yml@build
     steps:
+      - name: ReBuild
+        uses: ./.github/workflows/ci-backend.yml@build
       - name: Maven Compile
         working-directory: sgcmapi/
         run: mvn compile 
   test:
     needs: build
     runs-on: ubuntu-latest
-    uses: ./.github/workflows/ci-backend.yml@build
     steps:
+      - name: ReBuild
+        uses: ./.github/workflows/ci-backend.yml@build
       - name: Maven Test
         working-directory: sgcmapi/
         run: mvn test
