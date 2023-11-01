@@ -17,7 +17,8 @@ public class FiltroCors {
         corsConfig.setAllowedOrigins(Arrays.asList(
             "http://127.0.0.1:5500",
             "http://localhost:4200",
-            "https://localhost:4200"));
+            "https://localhost:4200",
+            "integracao-continua-t4-5bxm.vercel.app"));
         corsConfig.setAllowedMethods(Arrays.asList("*"));
         corsConfig.setAllowedHeaders(Arrays.asList("*"));
         UrlBasedCorsConfigurationSource configSource = new UrlBasedCorsConfigurationSource();
