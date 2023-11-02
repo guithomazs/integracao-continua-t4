@@ -1,3 +1,3 @@
 export const environment = {
-    API_URL: 'https://sgcm-g1.vercel.app'
+    API_URL: 'https://sgcmapi-t4a7.onrender.com/'
 };
