@@ -23,7 +23,7 @@ jobs:
         run: npm install
       - name: Test
         working-directory: sgcmapp/
-        run: ng test --no-watch --no-progress --browsers=ChromeHeadless
+        run: ng run sgcmapp:cypress-run
   deploy:
     runs-on: ubuntu-latest
     steps:
